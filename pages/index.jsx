@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Portfolio from '../components/portfolio/Portfolio';
+import PortfolioGrid from '../components/portfolio/PortfolioGrid';
 import styles from '../styles/Home.module.css';
 
 export default function Home({ data }) {
@@ -12,24 +12,21 @@ export default function Home({ data }) {
         <link rel="icon" href="https://img.icons8.com/ios/344/code.png" />
       </Head>
 
-      <div className="flex flex-col h-screen justify-around items-center">
-        <div className="header">
-          <h2 className="text-center font-bold text-4xl font-quickSand">
+      <div className="flex flex-col h-full justify-around items-center">
+        <div className="header py-8">
+          <h2 className="text-center font-bold text-4xl font-quicksand">
             Fullstack Developer
           </h2>
 
-          <p className="sub-header leading-9 text-2xl font-quickSand">
+          <p className="sub-header leading-9 text-2xl font-quicksand">
             I am a software developer with a passion for building web & mobile applications
           </p>
         </div>
 
-        <main className="flex flex-row justify-center items-start font-quickSand mx-auto w-11/12">
-          <Portfolio data={data} />
-        </main>
+        <PortfolioGrid data={data} />
 
-
-        <footer className="">
-          <span font-quickSand>Tamjid &copy; 2022</span>
+        <footer className="py-4">
+          <span font-quicksand>tamjid &copy; 2022</span>
         </footer>
       </div>
 
