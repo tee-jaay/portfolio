@@ -2,11 +2,13 @@ import React from 'react';
 import Image from 'next/image';
 
 const PortfolioGrid = ({ data }) => {
+    console.log(data);
     return (
         <section className="bg-gray-100 py-10 px-12">
             <div className="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {data.items.map((item, index) =>
-                    <div key={index} className="my-8 rounded shadow-lg shadow-gray-200 dark:shadow-gray-100 bg-white duration-300 hover:-translate-y-1">
+                    <div key={index} className="flex flex-col justify-between my-8 rounded shadow-lg shadow-gray-200 dark:shadow-gray-100 bg-white duration-300 hover:-translate-y-1">
+                        {/* Item info */}
                         <figure>
                             <Image src={item.fields.imgSrc} alt={item.fields.title} height={267} width={400} />
                             <figcaption className="p-4">
@@ -14,6 +16,13 @@ const PortfolioGrid = ({ data }) => {
                                 <small className="leading-5 text-black-500">{item.fields.description}</small>
                             </figcaption>
                         </figure>
+                        {/* Item tech tags */}
+                        <div className="flex flex-wrap justify-around content-start space-x-2">
+                            {item.fields.techs && item.fields.techs.map((tech, index) => (
+                                <span key={index} className="mb-1 text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-gray-200 text-gray-700 rounded-full">{tech}</span>
+                            ))}
+                        </div>
+                        {/* Item links */}
                         <div className='flex flex-row justify-around py-6'>
                             <a href={item.fields.youtubeLink} target="_blank" rel="noreferrer">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
