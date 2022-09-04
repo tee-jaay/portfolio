@@ -10,8 +10,8 @@ const PortfolioGrid = ({ data }) => {
         <section className="bg-gray-100 py-10 px-12">
             <div className="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {data.items.map((item, index) =>
-                    <div key={index} className={`flex flex-col justify-between my-8 rounded  ${styles.neomorphic}`}>
-                        <div className='bg-white h-full'>
+                    <div key={index} className={`my-8 ${styles.neomorphic}`}>
+                        <div className='flex flex-col justify-between bg-white h-full'>
                             {/* Item info */}
                             <figure>
                                 <Image src={item.fields.imgSrc} alt={item.fields.title} height={267} width={400} />
