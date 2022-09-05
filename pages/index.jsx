@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import Footer from '../components/layout/footer/Footer';
 import Header from '../components/layout/header/Header';
-import PortfolioGrid from '../components/portfolio/PortfolioGrid';
-import styles from '../styles/Home.module.css';
+import PortfolioRow from '../components/portfolio/PortfolioRow';
+import Footer from '../components/layout/footer/Footer';
+
 
 export default function Home({ data }) {
 
@@ -14,10 +14,10 @@ export default function Home({ data }) {
         <link rel="icon" href="https://img.icons8.com/ios/344/code.png" />
       </Head>
 
-      <div className="flex flex-col h-full justify-around items-center">
+      <div className="flex flex-col justify-between items-center">
         <Header />
 
-        <PortfolioGrid data={data} />
+        <PortfolioRow data={data} />
 
         <Footer />
       </div>
