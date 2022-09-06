@@ -3,9 +3,7 @@ import Header from '../components/layout/header/Header';
 import PortfolioRow from '../components/portfolio/PortfolioRow';
 import Footer from '../components/layout/footer/Footer';
 
-
 export default function Home({ data }) {
-
   return (
     <>
       <Head>
@@ -14,14 +12,19 @@ export default function Home({ data }) {
         <link rel="icon" href="https://img.icons8.com/ios/344/code.png" />
       </Head>
 
-      <div className="flex flex-col justify-between items-center">
+      <div style={{
+        dispaly: 'flex',
+        flexDirection: 'column',
+        height: '100% !important',
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
+      }}>
         <Header />
 
         <PortfolioRow data={data} />
 
         <Footer />
       </div>
-
     </>
   );
 }
