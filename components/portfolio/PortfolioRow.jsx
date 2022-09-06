@@ -7,7 +7,7 @@ const PortfolioRow = ({ data }) => {
         console.log(data);
     }
     return (
-        <section className="bg-white h-3/4">
+        <div className="bg-white h-3/4">
             <div className="relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto pb-14">
                 {data.items.map((item, index) =>
                     <div key={index} className={`snap-center shrink-0 ${styles.neomorphic}`}>
@@ -48,7 +48,7 @@ const PortfolioRow = ({ data }) => {
                     </div>
                 )}
             </div>
-        </section>
+        </div>
     );
 };
 
