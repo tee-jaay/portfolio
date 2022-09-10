@@ -12,18 +12,18 @@ export default function Home({ data }) {
         <link rel="icon" href="https://img.icons8.com/ios/344/code.png" />
       </Head>
 
-      <div style={{
-        dispaly: 'flex',
-        flexDirection: 'column',
-        height: '100% !important',
-        alignItems: 'center',
-        justifyContent: 'space-evenly',
-      }}>
-        <Header />
+      <div className="flex flex-col h-screen justify-between">
+        <div>
+          <Header />
+        </div>
 
-        <PortfolioRow data={data} />
+        <div>
+          <PortfolioRow data={data} />
+        </div>
 
-        <Footer />
+        <div>
+          <Footer />
+        </div>
       </div>
     </>
   );
