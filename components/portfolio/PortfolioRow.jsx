@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 import styles from '../../styles/Portfolio.module.css';
 
@@ -10,7 +9,7 @@ const PortfolioRow = ({ data }) => {
         <div className="bg-white h-3/4">
             <div className="relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto pb-14">
                 {data.items.map((item, index) =>
-                    <div key={index} className={`snap-center shrink-0 ${styles.neomorphic}`}>
+                    <div key={index} className={`snap-center shrink-0 ${styles.neomorphic} hover:shadow-lg transition duration-300 ease-in-out`}>
                         <div className='flex flex-col justify-between bg-white h-full'>
                             {/* Item info */}
                             <figure>
