@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Head from 'next/head';
-import Header from '../_components/layout/header/Header';
-import PortfolioRow from '../_components/portfolio/PortfolioRow';
-import SkillsGrid from "../_components/skills/SkillsGrid";
-import Footer from '../_components/layout/footer/Footer';
+import Header from '../components/layout/header/Header';
+import PortfolioRow from '../components/portfolio/PortfolioRow';
+import SkillsGrid from "../components/skills/SkillsGrid";
+import Footer from '../components/layout/footer/Footer';
 
 export default function Home({ data }) {
   const [activeTab, setActiveTab] = useState("skills");
@@ -20,32 +20,34 @@ export default function Home({ data }) {
         <link rel="icon" href="https://img.icons8.com/ios/344/code.png" />
       </Head>
 
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col">
         <div>
           <Header />
+          <div className="flex flex-row justify-center space-x-4 mt-8 mb-6">
+            <button
+              className={`px-4 py-2 rounded-md ${activeTab === "skills" ? "bg-blue-500 text-white" : "bg-gray-200 text-black"}`}
+              onClick={() => handleTabClick("skills")}
+            >
+              Skills
+            </button>
+            <button
+              className={`px-4 py-2 rounded-md ${activeTab === "portfolio" ? "bg-blue-500 text-white" : "bg-gray-200 text-black"}`}
+              onClick={() => handleTabClick("portfolio")}
+            >
+              Portfolio
+            </button>
+          </div>
         </div>
 
-        <div className="flex flex-row justify-center space-x-4 mt-8 mb-6">
-          <button
-            className={`px-4 py-2 rounded-md ${activeTab === "skills" ? "bg-blue-500 text-white" : "bg-gray-200 text-black"}`}
-            onClick={() => handleTabClick("skills")}
-          >
-            Skills
-          </button>
-          <button
-            className={`px-4 py-2 rounded-md ${activeTab === "portfolio" ? "bg-blue-500 text-white" : "bg-gray-200 text-black"}`}
-            onClick={() => handleTabClick("portfolio")}
-          >
-            Portfolio
-          </button>
-        </div>
+        <div className="flex flex-col justify-between h-max">
 
-        <div className="mt-4">
-          {activeTab === "skills" ? <SkillsGrid /> : <PortfolioRow data={data} />}
-        </div>
+          <div className="mt-4 mb-16">
+            {activeTab === "skills" ? <SkillsGrid /> : <PortfolioRow data={data} />}
+          </div>
 
-        <div>
-          <Footer />
+          <div>
+            <Footer />
+          </div>
         </div>
       </div>
     </>
